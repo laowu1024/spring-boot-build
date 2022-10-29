@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+//plugins {
+//    id 'org.springframework.boot' version '2.3.7.RELEASE'
+//    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+//    id 'java'
+//}
+
+
+
+group = 'com.wudi'
+version = "${rootProject.version}"
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenLocal() // 使用本地仓库
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.7.6-SNAPSHOT'
+    testImplementation('org.springframework.boot:spring-boot-starter-test:2.7.6-SNAPSHOT') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
